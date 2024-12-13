@@ -1,6 +1,9 @@
 import {createRoot} from "react-dom/client";
 import {App} from "./components/App";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {About} from "./pages/About";
+import {Shop} from "./pages/Shop";
+import {Suspense} from "react";
 
 const root = document.getElementById('root');
 
@@ -17,11 +20,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/about',
-                element: <h1>About</h1>
+                element: <Suspense fallback={'Loading...'}><About /></Suspense>
             },
             {
                 path: '/shop',
-                element: <h1>Shop</h1>
+                element: <Suspense fallback={'Loading...'}><Shop /></Suspense>
             }
         ]
     },
