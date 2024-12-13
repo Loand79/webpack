@@ -30,8 +30,17 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         use: 'ts-loader',
         exclude: /node_modules/,
     }
+    const assetsLoader =  {
+            test: /\.(png|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+    }
+
+    const svgrLoader = {
+            test: /\.svg$/i,
+            use: [{ loader: '@svgr/webpack', options: {icon: true} }],
+        }
 
     return [
-        scssLoader, tsLoader
+        scssLoader, tsLoader, assetsLoader, svgrLoader
     ]
 }

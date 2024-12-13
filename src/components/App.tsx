@@ -1,6 +1,9 @@
 import {useState} from 'react';
 import classes from './App.module.scss';
 import {Link, Outlet} from "react-router-dom";
+import avatarPNG from '../assets/spider.png';
+import avatarJPEG from '../assets/[eq.jpg';
+import Cross from '../assets/cross.svg';
 
 export const App = () => {
 
@@ -10,6 +13,11 @@ export const App = () => {
 
     return (
         <div>
+            <div>
+                <img width={100} height={100} src={avatarPNG} alt=""/>
+                <img width={100} height={100} src={avatarJPEG} alt=""/>
+                <Cross width={100} height={100} fill={'red'}/>
+            </div>
             <Link to={'/about'}>about</Link>
             <br/>
             <Link to={'/shop'}>shop</Link>
