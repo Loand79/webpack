@@ -6,7 +6,14 @@ declare module '*.module.scss' {
     export = classNames
 }
 
+declare module "*.svg" {
+    import React from "react";
+    const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+    export default SVG;
+}
+
 declare module "*.png";
-declare module "*.svg";
 declare module "*.jpeg";
 declare module "*.jpg";
+
+declare const __PLATFORM__: "desktop" | 'mobile';

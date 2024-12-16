@@ -11,12 +11,21 @@ export const App = () => {
 
     const increment = () => setCount(prev => prev + 1)
 
+    // if (__PLATFORM__ === 'desktop') {
+    //     return <div>ITSDESTOPPLATFORM</div>
+    // }
+    //
+    // if (__PLATFORM__ === 'mobile') {
+    //     return <div>ITSMOBILEPLATFORM</div>
+    // }
+
     return (
         <div>
+            <h1>PLATFORM={__PLATFORM__}</h1>
             <div>
                 <img width={100} height={100} src={avatarPNG} alt=""/>
                 <img width={100} height={100} src={avatarJPEG} alt=""/>
-                <Cross width={100} height={100} fill={'red'}/>
+                <Cross width={100} height={100} />
             </div>
             <Link to={'/about'}>about</Link>
             <br/>
